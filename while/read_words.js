@@ -10,12 +10,12 @@ function solve(input) {
 
 
 
-solve((["Nakov",
-"SoftUni",
-"Sofia",
-"Bulgaria",
-"SomeText",
+solve((["Sofia",
+"Berlin",
+"Moscow",
+"Athens",
+"Madrid",
+"London",
+"Paris",
 "Stop",
-"AfterStop",
-"Europe",
-"HelloWorld"]))
+"AfterStop"]))
