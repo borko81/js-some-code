@@ -24,4 +24,6 @@ function solve(...input) {
 
 solve("Discount",
 "12",
+"30")("Discount",
+"12",
 "30")
