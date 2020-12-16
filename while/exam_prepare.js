@@ -1,4 +1,4 @@
-function solve(items){
+function solve(items) {
     let count_to_discount = items[0];
     let counter = 0;
     let index = 1;
@@ -19,12 +19,12 @@ function solve(items){
             if (counter == count_to_discount) {
                 unfinish = false;
                 console.log(`You need a break, ${counter} poor grades.`);
-                break
+                breakgit 
             }
         }
         index++;
     }
-    if (unfinish){
+    if (unfinish) {
         console.log(`Average score: ${scores.reduce((a, b) => a + b, 0) / scores.length}`);
         console.log(`Number of problems: ${(index - 1) / 2}`);
         console.log(`Last problem: ${lecture}`);
@@ -33,9 +33,9 @@ function solve(items){
 
 
 solve(["2",
-"Income",
-"3",
-"Game Info",
-"6",
-"Best Player",
-"4"])
+    "Income",
+    "3",
+    "Game Info",
+    "6",
+    "Best Player",
+    "4"])
