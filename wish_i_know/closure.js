@@ -22,3 +22,4 @@ const addNumbers = (value) => {
 
 const num = addNumbers(10)
 console.log(num(10))
+
