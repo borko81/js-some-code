@@ -10,3 +10,5 @@ declare['increment']()
 declare['decrement']()
 
 console.log(counter);
+
+    
