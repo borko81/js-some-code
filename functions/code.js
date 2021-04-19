@@ -31,6 +31,11 @@ console.log(f(5))
 console.log([3,2,1].sort((a,b) => a - b))
 
 // Arrow function
+// May omit return!
 const sum = (a, b) => a + b;
 console.log(sum(1, 3))
+
+// constant function
+const myf = () => 42;
+console.log(myf())
 
