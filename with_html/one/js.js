@@ -24,3 +24,9 @@ button.addEventListener("click", function (){
 });
 
 color_button.addEventListener("click", changeColorBody)
+
+function selectFunction() {
+    let x = document.getElementById("mySelect");
+    document.getElementById('test').innerHTML = `The color now is ${x.value}`;
+    document.body.style.background = x.value;
+}
