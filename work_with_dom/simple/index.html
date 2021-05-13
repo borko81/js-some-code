@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script src="js.js"></script>
+	<title>Document</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<style>
+		* {
+			box-sizing: border-box;
+		}
+		.input-container {
+			display: flex;
+			width: 100%;
+		}
+		.icon {
+			padding: 10px;
+			background: dodgerblue;
+			color: white;
+			min-width: 50px;
+			text-align: center;
+		}
+		.input-field {
+			width: 100%;
+		}
+	</style>
+</head>
+<body>
+	<p id="result"></p>
+	<input type="button" value="Test Param" onclick="TestParam('Hello');">
+	<input type="button" value="Secret" onclick="Secret();">
+	<hr>
+
+	<div class="input-container">
+    	<i class="fa fa-user icon"></i>
+    	<input class="input-field" type="text" placeholder="Username" name="usrnm">
+  </div>
+
+  <div class="input-container">
+    	<i class="fa fa-key icon"></i>
+    	<input class="input-field" type="password" placeholder="Password" name="pass">
+  </div>
+
+</body>
+</html>
