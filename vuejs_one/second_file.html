@@ -1,0 +1,57 @@
+<html>
+   <head>
+      <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
+   </head>
+   <style>
+      .active {
+         color: #4f8a10;
+      }
+   </style>
+   <body>
+
+   	<div id="vue_det">
+         <h1>Firstname : {{ firstname }}</h1>
+         <h1>Secondname : {{ lastname }}</h1>
+         <div v-html="content"></div>
+         <div id="component">
+            <testcomponent></testcomponent>
+         </div>
+         <a href = "{{hreflink}}" target = "_blank">Click Me </a>
+         <a v-bind:href = "hreflink" target = "_blank">Click Me </a> 
+   	</div>
+
+      <div id="seconddiv">
+         <h1>{{ something }}</h1>
+         <div class="info" v-bind:class="{active: isActive}">
+            {{ title }}
+         </div>
+      </div>
+
+   	<script type="text/javascript">
+
+         Vue.component('testcomponent', {
+            template: '<p style="color:red">This is some text</p>'
+         })
+
+         var vm = new Vue({
+            el: '#vue_det',
+            data: {
+               firstname: 'FFF',
+               lastname: 'LLL',
+               content: "<div><h1>Vue js template</h1></div>",
+               hreflink: "https://google.bg"
+            }
+         });
+
+         var vm2 = new Vue({
+            el: '#seconddiv',
+            data: {
+               something: 'Something',
+               title: 'This is the title',
+               isActive: true
+            }
+         });
+   	</script>
+
+   </body>
+</html>
