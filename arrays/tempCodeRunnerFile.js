@@ -1,4 +1,2 @@
-for (let i = 0; i <= nums; i++){
-    //     let temp = arguments.shift()
-    //     arguments.push(temp)
-    // }
+            let temp = result.slice(i-k, k);
+            result.push(temp.reduce((a, b) =
