@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		#myInput {
+			background-color: #c0c0c0;
+			width: 100%;
+			font-size: 18px;
+			padding: 12px 20px 12px 40px;
+			border: 1px solid black;
+			margin-bottom: 12px;
+		}
+
+		#myUL {
+			list-style-type: none;
+			padding: 0;
+			margin: 0;
+		}
+
+		#myUL li a {
+			margin-top: -1px;
+			padding: 12px;
+			text-decoration: none;
+			font-size: 18px;
+			display: block;
+		}
+
+		#myUL li a:hover {
+			background-color: #eee;
+		}
+
+		.btn {
+			border: none;
+			padding: 14px 28px;
+			cursor: pointer;
+		}
+
+		.success {background-color: #04AA6D;}
+		.success:hover {
+			color: #04AA6D;
+			background-color: black;
+		}
+
+	</style>
+</head>
+
+<body>
+
+	<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names..">
+
+	<ul id="myUL">
+		<li><a href="#">Adele</a></li>
+		<li><a href="#">Agnes</a></li>
+
+		<li><a href="#">Billy</a></li>
+		<li><a href="#">Bob</a></li>
+
+		<li><a href="#">Calvin</a></li>
+		<li><a href="#">Christina</a></li>
+		<li><a href="#">Cindy</a></li>
+	</ul>
+
+
+	<hr>
+	<button class="btn success">Success</button>
+	<button class="btn info">Info</button>
+	<button class="btn warning">Warning</button>
+	<button class="btn danger">Danger</button>
+	<button class="btn default">Default</button>
+
+	<script>
+
+		function myFunction() {
+
+			let input, filter, ul, li, i, a, txtValue;
+
+			input = document.getElementById("myInput");
+			filter = input.value.toUpperCase();
+			ul = document.getElementById('myUL');
+			li = ul.getElementsByTagName('li');
+
+			for (i = 0; i < li.length; i++) {
+				a = li[i].getElementsByTagName("a")[0];
+				txtValue = a.textContent || a.innerText;
+				if (txtValue.toUpperCase().indexOf(filter) > -1) {
+					li[i].style.dsiplay = "";
+				} else {
+					li[i].style.display = "none";
+				}
+			}
+		}
+
+	</script>
+
+</body>
+
+</html>
