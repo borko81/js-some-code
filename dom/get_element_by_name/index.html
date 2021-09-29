@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Please rate the service:</p>
+    <p>
+        <input type="radio" name="rate" value="Very poor"> Very poor
+        <input type="radio" name="rate" value="Poor"> Poor
+        <input type="radio" name="rate" value="OK"> OK
+        <input type="radio" name="rate" value="Good"> Good
+        <input type="radio" name="rate" value="Very Good"> Very Good
+    </p>
+    <p>
+        <button id="btnRate">Submit</button>
+    </p>
+    <p id='result'></p>
+
+
+    <nav class="primary-nav">
+        <ul>
+            <li class="menu-item current"><a href="#home">Home</a></li>
+            <li class="menu-item"><a href="#services">Services</a></li>
+            <li class="menu-item"><a href="#about">About</a></li>
+            <li class="menu-item"><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+
+    <script>
+        let btn = document.getElementById("btnRate");
+        let r = document.getElementById("result");
+
+        btn.addEventListener("click", () => {
+            let rate = document.getElementsByName("rate");
+            rate.forEach((rate) => {
+                if(rate.checked) {
+                    r.innerHTML =  rate.value;
+                }
+            })
+        })
+    
+    let a = document.querySelectorAll(".menu-item" > 'a')
+    for(let i=0; i<a.lengthl; i++) {
+        console.log(a[i])
+    }
+    </script>
+</body>
+</html>
