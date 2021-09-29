@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #content {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+<h1>Create element example</h1>
+
+<ul id="menu">
+</ul>
+
+<script>
+
+    let names = ["first", "second", "last"];
+
+    function createMenuItem(name) {
+        let li = document.createElement("li");
+        li.id = "content";
+        li.textContent = name[0].toUpperCase() + name.slice(1,);
+        return li;
+    }
+
+    const menu = document.querySelector("#menu")
+    let div = document.createElement("div");
+    div.id = "content";
+    div.className = "div_class";
+    
+    div.innerHTML = "<p>This is a text in paragraph</p>";
+
+    let h2 = document.createElement("h2");
+    h2.innerHTML = "Add h2 element to div"
+    div.appendChild(h2);
+
+    names.forEach((name) => {
+        menu.appendChild(createMenuItem(name))
+    })
+
+    document.body.appendChild(div)
+</script>
+</body>
+</html>
