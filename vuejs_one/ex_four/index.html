@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css"></style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style type="text/css">
+        .color_red {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="root">
+    <h3 v-text='new Date()'></h3>
+    <h3 :class="colorred">{{ mymessage() }}</h3>
+    <h3>Completed tasks</h3>
+    <ul>
+        <li v-for="task in arr" v-if="task.completed" v-text="task.name"></li>
+    </ul>
+    <hr>
+    <h3 v-bind:class="colorred">Uncompleted tasks</h3>
+    <ul>
+        <li v-for="task in ComputedTask" v-text="task.name"></li>
+    </ul>
+</div>
+
+<script type="text/javascript">
+let app = new Vue({
+    el: '#root',
+    data: {
+        message: 'Hello',
+        colorred: 'color_red',
+        arr: [
+            {"name": "First", "completed": true},
+            {"name": "Second", "completed": false},
+            {"name": "Third", "completed": true},
+            {"name": "Fourt", "completed": false},
+        ]
+    },
+    methods: {
+        mymessage() {
+            return this.message.toUpperCase();
+        }
+    },
+    computed: {
+        ComputedTask() {
+            return this.arr.filter(task => ! task.completed)
+        }
+    }
+})
+
+</script>
+</body>
+</html>

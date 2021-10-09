@@ -16,6 +16,7 @@
 <div id="root">
 
 <h1 v-bind:class='{ "color-red": isLoading }' @click="toggleClass">This is in color red</h1>
+<p :class="className">Some text in p tag</p>
 
 <button v-bind:title="title">Hover</button>
 </div>
