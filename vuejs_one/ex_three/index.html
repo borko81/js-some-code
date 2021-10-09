@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css">
+        .color-red {
+            color: red;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+
+<div id="root">
+
+<h1 v-bind:class='{ "color-red": isLoading }' @click="toggleClass">This is in color red</h1>
+
+<button v-bind:title="title">Hover</button>
+</div>
+
+<script type="text/javascript">
+let app = new Vue({
+    el: '#root',
+    data: {
+        title: 'This os from JS',
+        className: 'color-red',
+        isLoading: false,
+    },
+    methods: {
+        toggleClass() {
+            this.isLoading = true;
+        }
+    }
+})
+
+</script>
+</body>
+</html>

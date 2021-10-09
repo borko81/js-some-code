@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+
+<div id="root">
+    {{ foo }}
+    <ul v-for='name in names' v-text='name'></ul>
+    <input type="" name="" id="input">
+    <button id='button'>Save</button>
+</div>
+
+<script type="text/javascript">
+let app = new Vue({
+    el: '#root',
+    data: {
+        foo: 'Bar',
+        names: ['first', 'second', 'last']
+    },
+    mounted() {
+        document.querySelector('#button').addEventListener('click', () => {
+        let name = document.querySelector('input').value;
+        app.names.push(name)
+    })
+    }
+})
+
+</script>
+</body>
+</html>
