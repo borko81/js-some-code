@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css"></style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <style>
+
+        body {
+            padding-top: 20px;
+        }
+
+        #myid {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+
+
+<div id="root" class="container">
+
+    <showthis>This is in p tag</showthis>
+
+    <message title="Hello there" body="Lorem ipsum dolar amet"></message>
+    <hr>
+    <task>One</task>
+    <task>Two</task>
+    <task>Three</task>
+
+    <task-list></task-list>
+
+</div>
+
+<script type="text/javascript">
+
+Vue.component('message', {
+
+    props: ['title', 'body'],
+
+    data() {
+        return {
+            isVisible: true
+        }
+    },
+
+    template: `
+        <article v-show='isVisible'>
+            <div class='message-header'>
+                <span class='close' @click="hideDiv">X</span>
+                {{ title }}
+            </div>
+            <div class="message-body">
+                {{ body }}
+            </div>
+        </article>
+    `,
+    methods: {
+        hideDiv() {
+            this.isVisible = false;
+        }
+    } 
+})
+
+
+Vue.component('showthis', {
+    template: `
+        <div id='myid'>
+            <p><slot></slot></p>
+        </div>
+    `
+})
+
+Vue.component('task', {
+    template: '<li><slot></slot></li>',
+})
+
+Vue.component('task-list', {
+    template: "<div><task v-for='task in tasks' v-text='task.task' v-if='task.complete'><task></div>",
+
+    data() {
+        return {
+            tasks: [
+                {task: 'Go to the store', complete: true},
+                {task: 'Go to the bank', complete: false}
+            ]
+        };
+    }
+})
+
+let app = new Vue({
+    el: '#root',
+    data: {
+
+    }
+})
+
+
+
+</script>
+</body>
+</html>
