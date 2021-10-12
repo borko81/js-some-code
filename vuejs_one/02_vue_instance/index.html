@@ -18,6 +18,14 @@
     <ul>
         <li v-for="item in myItems" v-text='item'></li>
     </ul>
+    <hr>
+    <ul>
+        <li v-for="book in books" :key="book.id">
+            <p>{{ book.id }}</p>
+            <p><strong>{{ book.title }}</strong> Price {{ book.price }}</p>
+            <p>Ganre: {{ book.genres.join(", ") }}</p>
+        </li>
+    </ul>
 </div>
 
 <script src="js.js"></script>
