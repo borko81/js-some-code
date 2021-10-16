@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <style type="text/css"></style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+
+
+<div id="root" class="container">
+    <h3>Text</h3>
+    <input type="text" v-model="inputs.text" />
+    <input type="number" v-model="inputs.number">
+    <hr>
+
+    <select name="" id="" v-model="inputs.select">
+        <option disabled value="" selected>Select your show</option>
+        <option value="first">First</option>
+        <option value="second">Second</option>
+    </select>
+
+    <br><br/>
+    <p><strong>Text:</strong> {{inputs.text}}</p>
+    <p><strong>Text:</strong> {{inputs.number}}</p>
+    <p><strong>Select</strong>{{ inputs.select }}</p>
+</div>
+
+<script src="form.js"></script>
+</body>
+</html>
