@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <style type="text/css">
+        #root {
+            background-color: #c0c0c0;
+        }
+    </style>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+</head>
+<body>
+    <div id="root">
+        <button v-bind:style="styleobj" v-on:click='showdata'>Click me</button>
+        <span style="color:red">{{show}}</span>
+        <h1 v-if='show' v-on:click='upperText'>{{text}}</h1>
+        <h1 v-else>Text is hide, click button to show again</h1>
+        <input type="text" placeholder="Enter some name" v-on:keyup.enter='inputname' v-model=newValue>
+        <ul>
+            <li v-for="a in items">{{a}}</li>
+        </ul>
+    </div>
+
+    <script>
+        let vm = new Vue({
+            el: '#root',
+            data: {
+                newValue: null,
+                show: true,
+                text: 'Some text',
+                styleobj: {
+                    backgroundColor: '#2196F3!important',
+                    padding: '8px 16px',
+                },
+                items: []
+            },
+            methods: {
+                showdata: function () {
+                    this.show = !this.show
+                },
+                upperText: function () {
+                    if(this.text.toUpperCase() === this.text) {
+                        this.text = this.text.toLowerCase()
+                    } else {
+                        this.text = this.text.toUpperCase()
+                    }
+                },
+                inputname: function (event) {
+                    const e = event.target.value;
+                    if (! e.trim().length == 0) {
+                        this.items.push(e) 
+                        this.newValue = null
+                    }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
