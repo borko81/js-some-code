@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            width: 100px;
+            height: 100px;
+            background: red;
+            transition: width 2s, height 1s, transform 1s;
+        }
+        span {
+            visibility: hidden;
+        }
+        div:hover {
+            width: 200px;
+            height: 200px;
+            transform: rotate(180deg);
+        }
+        div:hover span {
+            visibility: visible;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        some text is here
+        <span>This is from span tag</span>
+    </div>
+</body>
+</html>
