@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <form action="" id="myform">
+            <fieldset name="My Form">
+                <div>
+                    <input type="text" name="one" id="">
+                </div>
+                <div>
+                    <input type="number" name="age">
+                </div>
+                <div>
+                    <select name="s" id="sel">
+                        <option value="One">one</option>
+                        <option value="Two">two</option>
+                    </select>
+                </div>
+            </fieldset>
+            <button id="button">Click</button>
+        </form>
+
+        <script>
+            let form = document.forms.myform
+            form.age.value = 40;
+            form.one.value = "borko"
+            let b = document.querySelector("#button")
+            b.addEventListener("click", function () {
+                let element = form.one;
+                let age = form.age
+                let s = document.querySelector("#sel")
+                if (age.value.trim() !== '') {
+                    alert(element.value + " " + age.value + " " + s.value)
+                } else {
+                    alert("WTF")
+                }
+            })
+        </script>
+    </body>
+
+</html>
