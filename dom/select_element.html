@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .check {
+            color:red;
+        }
+        .btn {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <p id="message">A paragraph</p>
+    <ul id="menu">
+        <li class="first">First</li>
+        <li>Second</li>
+        <li>Last</li>
+    </ul>
+    <button id="btnSend">Send</button>
+    <script>
+        let names = "Boris G St".split(" ")
+        const p = document.getElementById("message")
+        p.style.color = "red"
+        let content = document.getElementById("menu")
+        let firstChild = content.firstElementChild;
+        console.log(firstChild);
+
+        let div = document.createElement("div")
+        div.className = "check"
+        div.innerHTML = "<h3>Text is here</h3>"
+        document.body.appendChild(div)
+
+        for (let i=0; i<5; i++) {
+            let li = document.createElement("li");
+            li.textContent = `${1 + i}`
+            content.appendChild(li)
+        }
+
+        let nodes = names.map(l => {
+            let li = document.createElement("li")
+            li.textContent = l;
+            return li
+        })
+
+        content.append(...nodes)
+
+        const h = document.createElement("h2")
+        h.textContent = "M-e-n-u"
+        content.insertBefore(h, content.firstChild)
+
+        let btnSend = document.querySelector('#btnSend');
+        if (btnSend) {
+            btnSend.setAttribute("name", "send");
+            btnSend.setAttribute("class", "btn")
+        }
+        console.log(btnSend.getAttribute("class"));
+    </script>
+</body>
+</html>

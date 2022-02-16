@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn">Click Me!</button>
+    <button id="btn2">Click me bytton2!</button>
+    <form action="" id="form">
+        <input type="text" placeholder="username">
+        <input type="password" placeholder="password">
+    </form>
+    <script>
+        let btn = document.querySelector("#btn")
+        let btn2 = document.querySelector("#btn2")
+        const pwd = document.querySelector("input[type='password']")
+
+        function display() {
+            alert("It was clicked")
+        }
+
+        function func_two() {
+            btn2.textContent = "Already Clicked"
+            btn2.setAttribute("disabled", "")
+        }
+
+        btn.addEventListener("click", display)
+        btn2.addEventListener("click", func_two)
+        pwd.addEventListener("focus", (e) => {
+            e.target.style.background = "yellow"
+        })
+        pwd.addEventListener("blur", (e) => {
+            e.target.style.background = ''
+        })
+    </script> 
+</body>
+</html>
