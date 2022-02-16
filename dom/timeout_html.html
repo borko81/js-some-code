@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="showAllert();" id="showme">Show</button>
+    <button onclick="cancelAlert()";>Cancel</button>
+
+    <script>
+        function showAllert() {
+            timeout = setTimeout(alert, 1000, "Message")
+        }
+        function cancelAlert() {
+            clearTimeout(timeout) 
+        }
+        function task() {
+            alert("Task message")
+        }
+        // setTimeout(task, 1500)
+        function toggleColor() {
+            let e = document.querySelector("#showme");
+            e.style.color = e.style.color == "red" ? 'blue' : "red";
+        }
+        setInterval(toggleColor, 1000)
+    </script>
+</body>
+</html>
