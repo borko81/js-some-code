@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+
+    <body>
+        <input type="button" id="go" value="click me">
+        <input type="button" value="print this page" onclick="window.print();">
+        <script>
+            let btn = document.querySelector("#go")
+            btn.addEventListener('click', myfunc_two);
+            function myfunc() {
+                let answer = confirm("Are you sure")
+                if (answer) {
+                    document.write("That is good")
+                } else {
+                    document.write("Not good")
+                }
+            }
+            function myfunc_two() {
+                let name = prompt("What is your name", "Enter name");
+                if (name == "borko") {
+                    document.write("Ok")
+                } else {
+                    document.write("Wtf!")
+                }
+            }
+        </script>
+    </body>
+
+</html>
