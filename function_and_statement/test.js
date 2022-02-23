@@ -16,4 +16,14 @@ function main(n) {
 }
 
 
-console.log(getStatus(15));
+
+function combo(...arr) {
+    let n = Number(arr.shift())
+    const operator = {
+        add: x => n+=1,
+        divide: x => n/=2
+    }
+    arr.forEach(x => console.log(operator[x](n)))
+}
+
+combo(30, 'add', 'add', 'divide');
