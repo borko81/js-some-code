@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+<button id="myBtn">Click Me</button>
+<br />
+
+
+<script type="text/javascript">
+	let names = 'first second last'.split(" ")
+	let number = 123;
+	let d = new Date()
+
+	function show_many_args(...names) {
+		return names.join("-")
+	}
+
+	function firstAlert() {
+		alert("That is frist alert when click on button")
+	}
+
+	let btn = document.getElementById("myBtn")
+	btn.addEventListener("click", firstAlert)
+
+	document.write(show_many_args("First name", "Last name"))
+	document.write("<br />")
+	document.write(...names)
+	let [First, Second, Last] = names
+	document.write("<br />")
+	document.write(First)
+	document.write("<br />")
+	document.write(number.toString() + number)
+	document.write("<br />")
+	document.write(d.getHours() + ":" + d.getMinutes())
+
+
+</script>
+</body>
+</html>

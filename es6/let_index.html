@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+
+<script>
+
+function sayHello(name="World") {
+	return `Hello ${name}`
+}
+
+let greet = name => document.write(`Hello ${name}`)
+
+let test_name = (name, message="Not recognize that name, try again") => {
+	if(name == "Borko") {
+		document.write("The name is good")
+	} else {
+		document.write(message)
+	}
+}
+
+function show_chars(chars) {
+	return chars.join("-")
+}
+
+let new_line = () => document.write("<br />")
+
+
+let letters = ["a", "b", "c", "d", "e", "f"];
+const NAME = "Borko"
+// let not save var after cycle, var save it
+for (var i=0; i<5; i++) {
+	document.write(`${i}<br />`);
+}
+document.write("<hr>" + i + "<br />")
+new_line()
+
+document.write(show_chars(letters))
+
+new_line()
+// NAME = "test" // generate error
+document.write(NAME)
+new_line()
+
+// in get index, of get element from array!
+for(let c in letters) {
+	document.write(letters[c] + " ")
+}
+
+new_line(letters)
+
+document.write(sayHello(NAME))
+new_line()
+greet("Test")
+new_line()
+test_name("NAME", "Error")
+new_line()
+
+new_line()
+</script>
+</body>
+</html>

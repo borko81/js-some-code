@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <style>
+        .box {
+            background: orange;
+            color: white;
+            padding: 20px;
+            margin: 10px;
+        }
+        .random_text {
+            width: 250px;
+            background: #c0c0c0;
+        }
+    </style>
+</head>
+<body>
+    <div class="random_text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil voluptate vel earum quo deserunt quod officiis facilis, architecto dolor nulla?</div>
+    <button>Create a box</button>
+    <button id="clear">Clear content</button>
+
+<script>
+    $(document).ready(function () {
+
+        $("button").click( function () {
+            $(this).before("<div class='box'>New box</div>");
+            $(this).after("<div class='box'>New box</div>");
+            $(".box").append("<p>Suprise</p>");
+        });
+
+        $("#clear").click( function () {
+            $(".random_text").remove();
+        });
+
+        $(".box p").click( function () {
+            $(this).detach();
+        });
+
+    });
+</script>
+</body>
+</html>
