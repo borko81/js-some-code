@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="button" id="setcookie" value="Set Cookie">
+    <input type="button" id="readcookie" value="Show cookie">
+    
+    <script>
+
+        let set = document.getElementById("setcookie")
+        let get = document.getElementById("readcookie")
+        set.addEventListener("click", setCookie("name", "borko", 1))
+        get.addEventListener("click", getCookie("name"))
+
+        function setCookie(name, value, live) {
+            var cookie = name + "=" + encodeURIComponent(value)
+
+            if (typeof(live) === "number") {
+                cookie += "; max-age=" + (live * 24 * 60 * 60)
+            }
+            document.cookie = cookie;
+        }
+
+        function getCookie(name) {
+            var cookie_arr = document.cookie.split(";")
+            for (var i=0; i<cookie_arr.length; i++) {
+                var pair = cookie_arr[i].split("=")
+                if (name == pair[0].trim()) {
+                    alert(decodeURIComponent(pair[1]))
+                }
+            }
+        }
+
+    </script>
+</body>
+</html>
