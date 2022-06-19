@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .container {
+            display: flex;
+        }
+        .red {
+            background: red;
+            flex-grow: 1;
+        }
+        .green {
+            background: green;
+        }
+        .blue {
+            background: blue;
+            flex-grow: 1;
+        }
+        .container > div {
+            font-size: 5vw;
+            padding: .5em;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <h3>Flexbox</h3>
+    <div class="container">
+        <div class="red">1</div>
+        <div class="green">2</div>
+        <div class="blue">
+            <p>Flexbox items can grow and shrink as required to fit their contents.</p>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            /* background: linear-gradient(to bottom, gray, black);
+            background-repeat: no-repeat; */
+            height: 100vh;
+        }
+        a {
+            text-decoration: none;
+            display: inline-block;
+        }
+        #but1:hover {
+            border-bottom: 1px solid green;
+            margin-left: 20px;
+            transform: scaleX(1.5);
+        }
+        .filtered {
+            width: 50%;
+            margin: 0 auto;
+            filter: drop-shadow(5px 5px 15px red);
+        }
+        .grad {
+            background: linear-gradient(to bottom, gray, black);
+            height: 25vh;
+            color: white;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2em;
+        }
+        nav {
+            width:100px;
+            background-color: yellow;
+            float: left;
+            height: 25vh;
+        }
+        nav > ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        nav > ul > li {
+           text-transform: uppercase;
+           padding-bottom: 10px;
+           padding-left: 10px;
+        }
+        article {
+            margin-left: 10px;
+            width: calc(100% - 110px);
+            background-color: orange;
+            float: right;
+            height: 25vh;
+        }
+    </style>
+</head>
+<body>
+    <a href="#" id="but1">Click me</a>
+    <div class="filtered">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat molestiae quae in commodi ut omnis aspernatur corrupti beatae eligendi temporibus?        
+    </div>
+    <div class="grad">
+        Linear gradient example
+    </div>
+    <!-- calc -->
+    <div id="calc_me">
+        <nav>
+            <ul>
+                <li><a href="#">First</a></li>
+                <li><a href="#">Second</a></li>
+                <li><a href="#">Last</a></li>
+            </ul>
+        </nav>
+        <article>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet veniam voluptatum id natus, obcaecati vel dolore adipisci repudiandae doloribus mollitia nulla illum impedit, dolor harum. Similique adipisci magni nam quis?
+        </article>
+    </div>
+</body>
+</html>
