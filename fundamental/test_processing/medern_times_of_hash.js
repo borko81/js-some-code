@@ -8,3 +8,5 @@ function modern_times(string) {
 
 modern_times(
 	'Nowadays everyone uses # to tag a #special word in #socialMedia')
+
+// str.match(/#[a-zA-Z0-9]+/g).forEach...
