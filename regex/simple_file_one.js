@@ -71,3 +71,7 @@ console.log("site.com my.site.com".match(/\b(\w+)\.(\w{2,3})\b/g))
 let dateRegex = /(?<year>[0-9]{4})-(?<moth>[0-9]{2})-(?<day>\d{2})/
 let data_str = "2022-07-30"
 console.log(data_str.match(dateRegex).groups)
+
+// Lookahad and lookbehind
+console.log("1 turkey costL 30E".match(/\d+(?=E)/))
+console.log("the price is 50 B40".match(/(?<=\$|B)\d+/g))
