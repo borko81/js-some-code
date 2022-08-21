@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text-Content</title>
+    <style>
+        .first {
+            color: lightcoral;
+        }
+        .cap {
+            text-transform: uppercase;
+        }
+    </style>
+</head>
+<body>
+    
+    <h1 id="special">This is special content</h1>
+
+    <ul>
+        <li class="first">first class attr</li>
+        <a href="#" id="link">random link</a>
+        <li>i have no attributes</li>
+    </ul>
+
+    <h1 id="first_id" class="first">This is for first id</h1>
+    <h1 id="second_id">This is for second id</h1>
+
+    <!-- JavaScripts-->
+    <script>
+        const item = document.querySelector('#special')
+        const value = item.nodeValue
+        console.log(item.childNodes[0])
+
+        // get and set attribute
+        const links = document.querySelectorAll('.first')
+        
+        const link = document.querySelector('#link')
+        console.log(link.getAttribute('href'))
+
+        const last = link.nextElementSibling;
+        console.log(last)
+        last.setAttribute('class', 'first')
+        last.textContent = 'Shazam'
+
+        // list of classes
+        const fid = document.querySelector('#first_id')
+        const classValue = fid.getAttribute('class')
+        console.log(classValue)
+        fid.classList.add('cap')
+
+    </script>
+</body>
+</html>

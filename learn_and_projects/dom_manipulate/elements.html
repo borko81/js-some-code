@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        ul {
+            margin: 0;
+            padding: 0;
+        }
+        li {
+            list-style-type: none;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h">Simple text</h1>
+    <ul>
+        <li>bananna</li>
+        <li>tommato</li>
+        <li>kiwi</li>
+        <li>unknown</li>
+    </ul>
+<script>
+let h = document.querySelector('#h')
+h.style.backgroundColor = 'red';
+h.style.color = 'white';
+
+const fruit_color_mapper = {
+    "bananna": "yellow",
+    "tommato": "red",
+    "kiwi": "green"
+}
+
+const li_tag = [...document.getElementsByTagName('li')]
+
+li_tag.forEach(x => {
+    const name = x.innerHTML
+    const color = fruit_color_mapper[name] || 'white'
+    x.style.color = color
+    x.style.backgroundColor = 'black'
+})
+
+let last_from_li = document.querySelector('li:last-child')
+last_from_li.innerHTML = last_from_li.innerHTML.toUpperCase()
+
+
+</script>
+</body>
+</html>
