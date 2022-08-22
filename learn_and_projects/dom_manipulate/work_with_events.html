@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <style>
+        .white {
+            background-color: white;
+            color: 'black';
+        }
+
+        .black {
+            background-color: black;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <p id="something" class="black">this Is some random text</p>
+    <button id="but" title="Change color">Change Font</button>
+
+    <script>
+        let p = document.querySelector('#something');
+        let b = document.querySelector('#but');
+
+        p.addEventListener('mouseenter', function(){
+            p.style.textTransform = 'uppercase'
+        })
+
+        p.addEventListener('mouseleave', function(){
+            p.style.textTransform = 'none'
+        })
+
+
+        b.addEventListener('click', function () {
+            let current_color = p.classList.contains('white')
+            if (current_color) {
+                p.classList.remove('white')
+                p.classList.add('black')
+            } else {
+                p.classList.remove('black')
+                p.classList.add('white')
+            }
+        })
+
+    </script>
+</body>
+
+</html>
