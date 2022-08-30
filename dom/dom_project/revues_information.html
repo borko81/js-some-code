@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfoRevues</title>
+    <style>
+        main {
+            max-width: 660px;
+            margin: 10px auto;
+            background-color: bisque;
+        }
+        main h2 {
+            text-align: center;
+            text-transform: uppercase;
+        }
+        main h2:before {
+            content: '--- '
+        }
+        main h2:after {
+            content: ' ---'
+        }
+        .info {
+            width: 60%;
+            margin: auto;
+        }
+        #username {
+            font-size: 1.2em;
+            letter-spacing: 0.3em;;
+        }
+        .header {
+            display: inline-block;
+            width: 100%;
+            margin: 10px auto;
+            text-align: center;
+        }
+        .header > ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+        .header > ul > li {
+            display: inline-block;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Info revues</h2>
+
+        <div class="info">
+            <p id="username">Username</p>
+            <p id="infotag">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem commodi consequuntur sit sunt iure deleniti iste magni, error tempora blanditiis!</p>
+            <span id="emailtag">Email: korea60@abv.bg</span>
+        </div>
+
+        <div class="header">
+            <ul>
+                <li>
+                    <button id="prev" class="button">Prev</button>
+                </li>
+                <li>
+                    <button id="next" class="button">Next</button>
+                </li>
+            </ul>
+        </div>
+    </main>
+
+<script>
+    // Const variable
+    const username = document.querySelector('#username')
+    const info = document.querySelector('#infotag')
+    const email = document.querySelector('#emailtag')
+    const button_prev = document.getElementById("prev")
+    const button_next = document.getElementById("next")
+
+    // data
+    const infos = [
+        {username: "Name One", info: "One info is here", email: "email_one@abv.bg"},
+        {username: "Name Two", info: "Two info is here", email: "email_tho@abv.bg"},
+        {username: "Name three", info: "Three info is here", email: "email_three@abv.bg"}
+    ]
+
+    let counter = 0
+
+    // first data
+    window.addEventListener('DOMContentLoaded', set_data(counter))
+
+    function set_data(counter) {
+        let current_info = infos[counter]
+        username.innerHTML = current_info.username
+        info.innerHTML = current_info.info
+        email.innerHTML = current_info.email
+    }
+
+    function validate_counter_in_len_of_data(count) {
+        let needed_l = infos.length
+        return Math.abs(count) % needed_l
+    }
+
+    button_next.addEventListener('click', function() {
+        
+        let current_position = validate_counter_in_len_of_data(counter += 1)
+        set_data(current_position)
+    })
+
+    button_prev.addEventListener('click', function() {
+        let current_position = validate_counter_in_len_of_data(counter -= 1)
+        console.log(current_position)
+        set_data(current_position)
+    })
+
+
+</script>
+</body>
+</html>
