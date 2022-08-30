@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Flipper</title>
+    <style>
+        body {
+            background-color: #f1f5f8;
+        }
+        main {
+            width: 50%;
+            margin: 50px auto;
+            border: 1px solid black;
+            text-align: center;
+            padding: 10px;
+        }
+        button {
+            border-radius: 5px;
+            padding: 5px;
+            margin: 5px;
+        }
+        header {
+            display: inline-block;
+            width: 100%;
+            margin: 0;
+            
+        }
+        header > ul {
+            list-style-type: none;
+        }
+        header > ul >li {
+            display: inline-block;
+            width: 30%
+        }
+        .count_button {
+            background-color: aquamarine;
+            padding:10px;
+        }
+        .count_button:hover {
+            background-color: black;
+            color: aquamarine;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class='inside'>Background Color <span class="color">#f1f5f8</span></div>
+        <button id="color_change">Click me for change color</button>
+        <button id="hex_change">Click me for change color</button>
+
+        <div class="counter">
+            <h2 id="show_here">Number: 0</h2>
+            <header>
+                <ul>
+                    <li><button class="count_button increase" >Increase</button></li>
+                    <li><button class="count_button reset">Reser</button></li>
+                    <li><button class="count_button decrease">Decrease</button></li>
+                </ul>
+            </header>
+        </div>
+
+    </main>
+
+<script>
+    const colors = ['green', 'red', 'lightblue', 'lightpink']
+    const hex = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, "A", "B", "C", "D", "E", "F"]
+    const color_length = colors.length
+    const span_colors = document.querySelector('.color')
+    let show_number = 0
+    
+    const btn = document.querySelector('#color_change')
+    const btn_hex = document.querySelector('#hex_change')
+    const color = document.querySelector('body')
+
+    function returnRandom(color_length) {
+        return Math.trunc(Math.random() * color_length)
+    }
+
+    btn.addEventListener('click', function () {
+        const randomNumber = returnRandom(color_length)
+        const now_color_is = colors[randomNumber]
+        document.body.style.backgroundColor = now_color_is
+        span_colors.innerHTML = now_color_is
+    });
+
+    btn_hex.addEventListener("click", function() {
+        let hex_color = "#";
+        for (let i=0; i<6; i++) {
+            const randomNumber = returnRandom(hex.length)
+            hex_color += hex[randomNumber]
+        }
+        document.body.style.backgroundColor = hex_color
+        span_colors.innerHTML = hex_color
+    });
+
+    // Here is number change script
+    document.querySelector('#show_here').innerHTML = show_number;
+
+    function give_from_class_name_change_number(value) {
+        show_number = show_number + value
+        document.querySelector('#show_here').innerHTML = show_number
+    }
+
+    const funtionality_buttons = document.querySelectorAll('.count_button')
+    
+    funtionality_buttons.forEach(x => {
+        x.addEventListener('click', function (e) {
+            const list_classes_from_button = e.currentTarget.classList
+            if (list_classes_from_button.contains('increase')) {
+                give_from_class_name_change_number(1)
+            } else if (list_classes_from_button.contains('decrease')) {
+                give_from_class_name_change_number(-1)
+            } else if (list_classes_from_button.contains('reset')) {
+                show_number = 0
+                document.querySelector('#show_here').innerHTML = show_number
+            }
+        })
+    })
+
+</script>
+</body>
+</html>
