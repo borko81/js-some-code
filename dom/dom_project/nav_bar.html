@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NavBar</title>
+    <style>
+        nav {
+            width: 100%;
+            background-color: blanchedalmond;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        }
+        .logo {
+            text-transform: uppercase;
+        }
+        .but {
+            background-color: aqua;
+            text-transform: uppercase;
+            cursor: pointer;
+
+        }
+        .menu {
+            margin: 0;
+            padding: 0;
+        }
+        .menu ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #c3c3c3;
+            transition: visibility 0s, opacity 0.5s linear;
+        }
+        .menu a {
+            text-decoration: none;
+            color: black;
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+        }
+        .show_menu {
+            display: none;
+            transition: opacity 1s ease-out;
+        }
+        @media only screen and (min-width:600px) {
+
+            .menu > ul > li {
+                display: inline-block;
+            }
+            .but {
+                display: none;
+            }
+        }
+        @media only screen and (max-width:600px) {
+            .only_min {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h2>Some Logo</h2>
+        </div>
+        <div class="but">Button</div>
+    </nav>
+    <div class="menu only_min">
+        <ul>
+            <li><a href="">One</a></li>
+            <li><a href="">Two</a></li>
+            <li><a href="">Three</a></li>
+        </ul>
+    </div>
+
+<script>
+    const but_for_show_menu = document.querySelector('.but')
+    let menus = document.querySelector(".menu")
+
+    but_for_show_menu.addEventListener("click", function() {
+        menus.classList.remove('only_min')
+        menus.classList.toggle('show_menu')
+        
+    })
+</script>
+</body>
+</html>
