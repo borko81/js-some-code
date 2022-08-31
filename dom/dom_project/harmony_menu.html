@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Harmony</title>
+    <style>
+        :root {
+            --menu_color: lightgreen;
+        }
+        .main {
+            width: 80%;
+            margin: 0 auto;
+        }
+        .section {
+            width: 100%;
+            background-color: var(--menu_color);
+            margin-bottom: 15px;
+        }
+        .title {
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            align-items: center;
+            height: 45px;
+        }
+        .title > span {
+            text-align: right;
+        }
+        .title > span:hover {
+            cursor: pointer;
+        }
+        .content {
+            display: none;
+        }
+        .content_show {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+
+        <div class="section">
+            <div class="title">
+                <h2>Title One</h2>
+                <button class="expand">Show</button>
+            </div>
+            <div class="content">
+                <hr />
+                1Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque facere repellendus voluptate! Obcaecati quidem dolorum corporis assumenda ipsa, aut eaque.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="title">
+                <h2>Title Two</h2>
+                <button class="expand">Show</button>
+            </div>
+            <div class="content">
+                <hr />
+                2Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque facere repellendus voluptate! Obcaecati quidem dolorum corporis assumenda ipsa, aut eaque.
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="title">
+                <h2>Title Three</h2>
+                <button class="expand">Show</button>
+            </div>
+            <div class="content">
+                <hr />
+                3Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eaque facere repellendus voluptate! Obcaecati quidem dolorum corporis assumenda ipsa, aut eaque.
+            </div>
+        </div>
+
+    </div>
+
+<script>
+    
+    [...document.querySelectorAll('.expand')].forEach(el => {
+        el.addEventListener('click', function(e){
+                const title = e.currentTarget.parentElement
+                title.nextElementSibling.classList.toggle('content_show')
+                if (title.nextElementSibling.classList.contains('content_show')) {
+                    el.innerHTML = 'Hide'
+                } else {
+                    el.innerHTML = 'Show'
+                }
+       })
+    })
+
+</script>
+</body>
+</html>
