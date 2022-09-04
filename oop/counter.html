@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Counter</title>
+    <style>
+        :root {
+            --main_color: #c3c3c3;
+        }
+        .main {
+            width: 80%;
+            height: 80vh;
+            margin: 10px auto;
+            background-color: var(--main_color);
+            
+        }
+        .container {
+            width: 80%;
+            margin: auto;
+            border-bottom: 1px solid black;
+        }
+        .container > h1 {
+            text-align: center;
+            text-transform: uppercase;
+        }
+        .value {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .buttons {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        .btn {
+            padding: 5px;
+            margin: 10px;
+            width: 250px;
+            border: 1px solid green;
+        }
+        .btn:hover {
+            cursor: pointer;
+            background-color: green;
+            color: white;
+            border-radius: 5px;
+            transition: .5s;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main">
+
+        <!-- first -->
+        <div class="container first_count">
+            <h1>First Counter</h1>
+            <span class="value">0</span>
+            <div class="buttons">
+                <button class="btn decrease">Decrease</button>
+                <button class="btn reset">Reser</button>
+                <button class="btn increase">Increase</button>
+            </div>
+        </div>
+
+        <div class="container second_count">
+            <h1>Second Counter</h1>
+            <span class="value">100</span>
+            <div class="buttons">
+                <button class="btn decrease">Decrease</button>
+                <button class="btn reset">Reser</button>
+                <button class="btn increase">Increase</button>
+            </div>
+        </div>
+        <!-- second -->
+    </div>
+<script src="counter_func.js"></script>
+</body>
+</html>
