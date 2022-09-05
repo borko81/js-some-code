@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        img {
+            max-width: 100%;
+            max-height: auto;
+            content-visibility: auto;
+        }
+        main > h2 {
+            text-align: center;
+        }
+        .content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .img {
+            margin: 10px;
+        }
+        .modal {
+            position: fixed;
+            top:0;
+            left: 0;
+            z-index: 1;
+            padding-top: 100px;
+            width: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0, .4);
+            display: none;
+        }
+
+        .modal_footer {
+            display: flex;
+            justify-content: space-between;
+        }
+        .modal_footer > span {
+            text-transform: uppercase;
+            cursor: pointer;
+        }
+        .modal_show {
+            position: fixed;
+            top:0;
+            left: 0;
+            z-index: 1;
+            padding-top: 100px;
+            width: 100%;
+            overflow: auto;
+            background-color: rgba(0,0,0, .4);
+            display: block;
+        }
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+          }
+          .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+          }
+          .close {
+            color: #000;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+          }
+          
+          .close:hover,
+          .close:focus {
+            color: #000;
+            text-decoration: none;
+            cursor: pointer;
+          }
+    </style>
+</head>
+<body>
+    <main>
+        <h2>Gallery</h2>
+        <div class="content">
+            <div class="img">
+                <img loading="lazy" src="1.jpg" alt="picture 1" title="picture 1" class="images" width='250px' height="250px" data-img="1">
+            </div>
+            <div class="img">
+                <img loading="lazy" src="4.jpg" alt="picture 2" title="picture 1" class="images" width='250px' height="250px" data-img="2">
+            </div>
+            <div class="img">
+                <img loading="lazy" src="3.jpg" alt="picture 3" title="picture 1" class="images" width='250px' height="250px" data-img="3">
+            </div>
+            <div class="img">
+                <img loading="lazy" src="2.jpg" alt="picture 4" title="picture 1" class="images" width='250px' height="250px" data-img="4">
+            </div>
+        </div>
+        <hr>
+
+    </main>
+    <div class="modal">
+        <div class="modal_content">
+            <span class="close">&times;</span>
+            <div class="content">
+                <div class="img">
+                    <img loading="lazy" src="1.jpg" alt="picture 1" title="picture 1" width='780px' height="350px">
+                </div>
+            </div>
+        </div>
+        <div class="modal_footer"><span id='prev'>Prev</span><span id='next'>Next</span></div>
+    </div>
+<script src="js.js"></script>
+</body>
+</html>
