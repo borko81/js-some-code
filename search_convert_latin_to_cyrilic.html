@@ -385,7 +385,6 @@ char_arrays['T'] = 'Т'
 char_arrays['U'] = 'У'
 char_arrays['F'] = 'Ф'
 char_arrays['H'] = 'Х'
-char_arrays['CH'] = 'Ч'
 char_arrays['4'] = 'Ч'
 char_arrays['6'] = 'Ш'
 char_arrays['W'] = 'В'
@@ -405,8 +404,8 @@ input.onkeyup = function () {
 
 	setTimeout( () => {
 		for (const [k, v] of Object.entries(char_arrays)) {
-			filter = filter.replace(k, v)
 			console.log(filter)
+			filter = filter.replace(k, v)
 			for (let i = 0; i < lis.length; i++) {
 				let name = lis[i].innerHTML
 				if (name.toUpperCase().indexOf(filter) !== -1) {
