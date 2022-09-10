@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MAke Promise</title>
+</head>
+<body>
+    <h1>Some text for beautiful</h1>
+    <button type="button">Click me</button>
+
+<script>
+    const btn = document.getElementsByTagName('button')[0]
+    btn.addEventListener('click', () => {
+        promise.then((data) => console.log(data)).catch((err) => console.log(err))
+    })
+
+
+    const promise = new Promise((resolve, reject) => {
+        let value = true;
+        if(value) {
+            resolve('Some text in promise')
+            value = false;
+        } else {
+            reject('There was a error acquire!')
+        }
+    });
+    
+</script>
+</body>
+</html>

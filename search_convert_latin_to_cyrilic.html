@@ -404,7 +404,6 @@ input.onkeyup = function () {
 
 	setTimeout( () => {
 		for (const [k, v] of Object.entries(char_arrays)) {
-			console.log(filter)
 			filter = filter.replace(k, v)
 			for (let i = 0; i < lis.length; i++) {
 				let name = lis[i].innerHTML
