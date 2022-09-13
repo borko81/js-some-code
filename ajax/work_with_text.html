@@ -9,31 +9,44 @@
         h1 {
             text-align: center;
         }
+        #result {
+            width: 40%;
+            margin: 0 auto;
+            background-color:bisque;
+        }
     </style>
 </head>
 <body>
+
     <h1>Ajax</h1>
+    <div id="result"></div>
 
 <script>
 
-const xhr = new XMLHttpRequest;
-
+let result = document.querySelector("#result");
+const xhr = new XMLHttpRequest();
 xhr.open('GET', 'text.txt');
+xhr.send();
+
 xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {
-        const text = document.createElement("p")
-        text.textContent = xhr.responseText;
-        document.body.appendChild(text);
-    } else {
+    if ((xhr.readyState == 4) && (xhr.status == 200)) {
+     
+        xhr.responseText.split("\n").forEach(r => {
+            result.innerHTML += r + "<br />"
+        })    
+    } else if(xhr.status !== 200) {
+        result.innerHTML = xhr.status + ' ' + xhr.statusText
         console.log(
             {
-                status:xhr.status,
-                text:xhr.statusText
+                status: xhr.status,
+                text: xhr.statusText
             }
         )
     }
 };
-xhr.send()
+
+
+
 
 </script>
 </body>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Halvetica', sans-serif;
+        }
+        main {
+            width: 100%;
+            margin: 0;
+        }
+        .root {
+            width: 60%;
+            margin: 10px auto;
+            background-color: burlywood;
+        }
+        .container {
+            width: 100%;
+            margin-top: 10px;
+        }
+        .container h2 {
+            text-align: center;
+        }
+        .btn {
+            text-transform: uppercase;
+            letter-spacing: 0.2em;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    
+    <main>
+        <div class="root">
+            <div class="container">
+                <h2>Chuck Norise</h2>
+                <p class="where">Say something</p>
+            </div>
+            <button type="button" class="btn container">Load Next</button>
+        </div>
+    </main>
+
+<script>
+    const btn = document.querySelector('.btn')
+    let where = document.querySelector('.where')
+    btn.addEventListener('click', function () {
+        show_laugh()
+    })
+    
+    function show_laugh() {
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', 'https://api.chucknorris.io/jokes/random')
+        xhr.setRequestHeader('Content-Type', 'json')
+        xhr.setRequestHeader('User-Agent', 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:104.0) Gecko/20100101 Firefox/104.0')
+        xhr.send()
+        xhr.onreadystatechange = function (){
+            if (xhr.status === 200 && xhr.readyState === 4) {
+                let result = xhr.responseText
+                let json_result = JSON.parse(result)
+                let laugh = json_result['value']
+                where.innerHTML = laugh
+            } else if (xhr.status !== 200) {
+                console.log('Error')
+            }
+        }
+    }
+    
+</script>
+</body>
+</html>
