@@ -20,7 +20,7 @@
             "skipFiles": [
                 "<node_internals>/**"
             ],
-            "program": "${workspaceFolder}\\fundamental\\basic\\01_ages.js"
+            "program": "${workspaceFolder}\\fundamental\\arrays\\07.js"
         }
     ]
 }
